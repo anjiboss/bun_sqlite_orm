@@ -1,6 +1,5 @@
-import { Post } from "./entities/Post";
 import { User } from "./entities/User";
-import { SetupDB } from "./lib/dbSource";
+import { DataSource } from "./lib/dbSource";
 
-const dbsource = new SetupDB("db/mydb.sqlite", [User, Post]);
-dbsource.entities["User"];
+const dbsource = new DataSource("db/mydb.sqlite", "src/entities");
+const userRepo = dbsource.getRepository(new User());

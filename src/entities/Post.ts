@@ -3,6 +3,6 @@ import { Database } from "bun:sqlite";
 
 export class Post extends BaseEntity {
     constructor() {
-        super();
+        super("posts");
     }
 }
